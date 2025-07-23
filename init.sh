@@ -1,9 +1,21 @@
 #!/bin/bash
 
+initClang(){
+    echo "Initializing Clang project..."
+    mkdir src
+    mkdir include
+    touch src/main.c
+}
+
 while getopts ":c" opt; do
     case $opt in
         c)
-            echo "C selected"
+            initClang
+            ;;
+        h)
+            echo "Help selected"
+            echo "Here are all the supported languages at the moment:"
+            echo "C/C++"
             ;;
         \?)
             echo "Invalid option"
@@ -13,3 +25,4 @@ while getopts ":c" opt; do
             ;;
     esac
 done
+
