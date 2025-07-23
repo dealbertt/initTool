@@ -1,3 +1,15 @@
-#!/usr/bin/bash
+#!/bin/bash
 
-echo "Initializing project..."
+while getopts ":c" opt; do
+    case $opt in
+        c)
+            echo "C selected"
+            ;;
+        \?)
+            echo "Invalid option"
+            ;;
+        :)
+            echo "Option -$OPTARG requires an argument." >&2
+            ;;
+    esac
+done
