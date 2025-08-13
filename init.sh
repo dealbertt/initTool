@@ -5,6 +5,7 @@ initClang(){
     mkdir src
     mkdir include
     touch src/main.c
+    touch makefile
     echo "#include <stdio.h>
 int main(){
     printf(\"Hello World\");
@@ -12,10 +13,26 @@ int main(){
 }" >> src/main.c
 }
 
+initCplus(){
+    echo "Initializing C++ project..."
+    mkdir src
+    mkdir include
+    touch src/main.cpp
+    touch makefile
+    echo "#include <iostream>
+int main(){
+    std::cout << \"Hello World\" << std::endl;
+    return 0;
+}" >> src/main.cpp
+}
 while [[ $# -gt 0 ]]; do
     case $1 in
         --clang) #Clang
             initClang
+            shift
+            ;;
+        --cplusplus) #C++
+            initCplus
             shift
             ;;
         --python) 
