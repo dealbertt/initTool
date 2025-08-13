@@ -12,24 +12,23 @@ int main(){
 }" >> src/main.c
 }
 
-while getopts "cp:h" opt; do
-    case $opt in
-        c) #Clang
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --clang) #Clang
             initClang
+            shift
             ;;
-        p) #python
+        --python) 
             echo "python"
+            shift
             ;;
-        h) #help
-            echo "Help selected"
-            echo "Here are all the supported languages at the moment:"
-            echo "C/C++"
+        --help) 
+            echo "Usage: $0 [--clang] [--python] [--help]"
+            exit 0
             ;;
-        \?)
+        *)
             echo "Invalid option"
-            ;;
-        :)
-            echo "Option -$OPTARG requires an argument." >&2
+            exit 1 
             ;;
     esac
 done
