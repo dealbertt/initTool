@@ -5,16 +5,20 @@ initClang(){
     mkdir src
     mkdir include
     touch src/main.c
-    echo "#include <stdio.h>\n\nint main(){\nreturn 0;\n}"
+    echo "#include <stdio.h>
+int main(){
+    printf(\"Hello World\");
+    return 0;
+}" >> src/main.c
 }
 
-while getopts ":c:p:h" opt; do
+while getopts "cp:h" opt; do
     case $opt in
         c) #Clang
             initClang
             ;;
         p) #python
-            echo "C++"
+            echo "python"
             ;;
         h) #help
             echo "Help selected"
