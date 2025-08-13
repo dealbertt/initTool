@@ -3,5 +3,5 @@ This includes creating the right folders for the projects (like src, include, et
 To use this script anywhere on your computer, just type:  
   
 ```cmd
-mv your_script.sh /usr/local/bin/your_script
+sudo cp initTool.sh /usr/local/bin/initTool
 ```

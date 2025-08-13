@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 initClang(){
     echo "Initializing C project..."
@@ -7,12 +7,12 @@ initClang(){
     touch src/main.c
     touch makefile
     echo "#include <stdio.h>
-int main(){
-    printf(\"Hello World\\n\");
-    return 0;
-}" >> src/main.c
-    gcc src/main.c -o main
-    ./main
+    int main(){
+        printf(\"Hello World\\n\");
+        return 0;
+    }" >> src/main.c
+gcc src/main.c -o main
+./main
 }
 
 initCplus(){
@@ -22,12 +22,12 @@ initCplus(){
     touch src/main.cpp
     touch makefile
     echo "#include <iostream>
-int main(){
-    std::cout << \"Hello World\" << std::endl;
-    return 0;
-}" >> src/main.cpp
-    g++ src/main.cpp -o main
-    ./main
+    int main(){
+        std::cout << \"Hello World\" << std::endl;
+        return 0;
+    }" >> src/main.cpp
+g++ src/main.cpp -o main
+./main
 }
 
 initPython(){
