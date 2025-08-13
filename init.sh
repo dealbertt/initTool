@@ -8,9 +8,11 @@ initClang(){
     touch makefile
     echo "#include <stdio.h>
 int main(){
-    printf(\"Hello World\");
+    printf(\"Hello World\\n\");
     return 0;
 }" >> src/main.c
+    gcc src/main.c -o main
+    ./main
 }
 
 initCplus(){
@@ -24,6 +26,17 @@ int main(){
     std::cout << \"Hello World\" << std::endl;
     return 0;
 }" >> src/main.cpp
+    g++ src/main.cpp -o main
+    ./main
+}
+
+initPython(){
+    echo "Initializing Python project..."
+    mkdir src
+    mkdir tests 
+    touch src/main.py
+    touch requirements.txt 
+    echo "print(\"Hello World\")" >> src/main.py
 }
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -36,7 +49,7 @@ while [[ $# -gt 0 ]]; do
             shift
             ;;
         --python) 
-            echo "python"
+            initPython
             shift
             ;;
         --help) 
