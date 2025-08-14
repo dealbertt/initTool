@@ -36,7 +36,8 @@ initPython(){
     mkdir tests 
     touch src/main.py
     touch requirements.txt 
-    echo "print(\"Hello World\")" >> src/main.py
+    echo "print(\"Hello World\\n\")" >> src/main.py
+    python3 src/main.py
 }
 while [[ $# -gt 0 ]]; do
     case $1 in
