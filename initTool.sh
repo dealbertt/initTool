@@ -54,6 +54,8 @@ while [[ $# -gt 0 ]]; do
             shift
             ;;
         --help) 
+            echo "This tool is dedicated to initializing projects in different programming languages\n"
+            echo "Here are all the supported languages so far: C/C++ - Python\n"
             echo "Usage: $0 [--clang] [--python] [--help]"
             exit 0
             ;;
