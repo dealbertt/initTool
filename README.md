@@ -22,3 +22,8 @@ To start a new python project:
 ```cmd
 ./initTool.sh --python
 ```
+
+To access the help command, of course:  
+```cmd
+./initTool.sh --help
+```
