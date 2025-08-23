@@ -5,3 +5,17 @@ To use this script anywhere on your computer, just type:
 ```cmd
 sudo cp initTool.sh /usr/local/bin/initTool
 ```
+
+Then simply type:
+
+```cmd
+./initTool.sh --clang
+```
+
+```cmd
+./initTool.sh --cplusplus
+```
+
+```cmd
+./initTool.sh --python
+```
