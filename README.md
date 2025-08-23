@@ -6,16 +6,19 @@ To use this script anywhere on your computer, just type:
 sudo cp initTool.sh /usr/local/bin/initTool
 ```
 
-Then simply type:
+Then simply type:  
 
+To start a new C project: 
 ```cmd
 ./initTool.sh --clang
 ```
 
+To start a new C++ project:   
 ```cmd
 ./initTool.sh --cplusplus
 ```
 
+To start a new python project:   
 ```cmd
 ./initTool.sh --python
 ```
